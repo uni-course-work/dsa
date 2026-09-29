@@ -1,8 +1,8 @@
 #include <iostream>
 
-int main () {
+int main() {
   int SIZE = 10;
-  int arr [SIZE];
+  int arr[SIZE];
   std::cout << "Insert Ten integers: ";
   for (int i = 0; i < SIZE; i++) {
     std::cin >> arr[i];

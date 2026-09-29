@@ -9,11 +9,11 @@ int linearSearch(int arr[], int toFind, int SIZE) {
   return -1;
 };
 
-int main () {
+int main() {
   int SIZE = 10;
-  int arr[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+  int arr[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
   int toFind;
-  for (int x: arr) {
+  for (int x : arr) {
     std::cout << x << ' ';
   }
   std::cout << '\n';

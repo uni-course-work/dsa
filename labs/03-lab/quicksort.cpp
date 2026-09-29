@@ -3,8 +3,8 @@
 
 using namespace std;
 
-int partition(int arr [], int low, int high) {
-  int& pivot = arr[high];
+int partition(int arr[], int low, int high) {
+  int &pivot = arr[high];
   int i = low;
 
   for (int j = low; j < high; j++) {
@@ -17,22 +17,23 @@ int partition(int arr [], int low, int high) {
   return i;
 }
 
-void quicksort (int arr [], int low, int high) {
-  if (low >= high) return;
+void quicksort(int arr[], int low, int high) {
+  if (low >= high)
+    return;
   int partitionIndex = partition(arr, low, high);
-  quicksort(arr, low,  partitionIndex- 1);
+  quicksort(arr, low, partitionIndex - 1);
   quicksort(arr, partitionIndex + 1, high);
 }
-int main () {
-  int arr []= {0, 10, 4, 5, 9, 88, 11, -10, -8, -83};
+int main() {
+  int arr[] = {0, 10, 4, 5, 9, 88, 11, -10, -8, -83};
   cout << "Array before sorting: ";
-  for (int x: arr) {
+  for (int x : arr) {
     cout << x << ' ';
   }
   int SIZE = 10;
-  quicksort(arr, 0, SIZE -1);
+  quicksort(arr, 0, SIZE - 1);
   cout << "Array after sorting: ";
-  for (int x: arr) {
+  for (int x : arr) {
     cout << x << ' ';
   }
 }
