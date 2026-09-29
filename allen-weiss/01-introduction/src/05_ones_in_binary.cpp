@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-int binaryOnes(int num, int ones = 0) {
+int static binaryOnes(int num, int ones = 0) {
   if (num == 0)
     return ones + 0;
   return binaryOnes(

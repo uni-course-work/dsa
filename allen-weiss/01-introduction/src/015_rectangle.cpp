@@ -2,26 +2,29 @@
 #include <iostream>
 #include <vector>
 
-class Rectangle {
-public:
-  Rectangle(int width, int height) : width{width}, height{height} {}
+namespace
+{
+  class Rectangle {
+  public:
+    Rectangle(const int width, const int height) : width{width}, height{height} {}
 
-  int getWidth() const { return width; }
-  int getHeight() const { return height; }
-  void print() const {
-    std::cout << "Height: " << getHeight() << ' ';
-    std::cout << "Width: " << getWidth() << ' ';
-    std::cout << '\n';
-  }
+    int getWidth [[nodiscard]] () const { return width; }
+    int getHeight [[nodiscard]] () const { return height; }
+    void print() const {
+      std::cout << "Height: " << getHeight() << ' ';
+      std::cout << "Width: " << getWidth() << ' ';
+      std::cout << '\n';
+    }
 
-private:
-  int width;
-  int height;
-};
+  private:
+    int width;
+    int height;
+  };
+}
 
 int main() {
-  Rectangle r1{5, 12};
-  Rectangle r2(8, 8);
+  const Rectangle r1{5, 12};
+  const Rectangle r2(8, 8);
 
   std::vector<Rectangle> rectangles{r1, r2};
   const Rectangle bigByArea = findMax(rectangles, [](Rectangle a, Rectangle b) {

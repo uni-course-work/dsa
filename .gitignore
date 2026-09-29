@@ -1,1 +1,13 @@
-out
+# 1. Ignore everything
+*
+
+# 2. Re-include all directories so Git can search them
+!*/
+
+# 3. Re-include your specific files and extensions
+!*.cpp
+!.clang-tidy
+!*.c
+!*.h
+!*.txt
+!.gitignore

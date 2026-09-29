@@ -6,14 +6,14 @@
 
 using namespace std;
 
-void printDigit(int n) { std::cout << n; }
-void printInteger(int n) {
+void static printDigit(const int n) { std::cout << n; }
+void static printInteger(const int n) {
   if (n >= 10 || n <= -10) {
     printInteger(n / 10);
   }
   printDigit(n % 10);
 }
-void printFraction(double d, int digitRequested) {
+void static printFraction(double d, int digitRequested) {
   d *= 10;
   int integerPart = std::trunc(d);
   printDigit(integerPart);
@@ -22,9 +22,9 @@ void printFraction(double d, int digitRequested) {
   printFraction(d - integerPart, digitRequested - 1);
 }
 int main() {
-  double num = 100.09930;
-  int integerPart = std::trunc(num);
-  double fractionPart = num - integerPart;
+  constexpr double num = 100.09930;
+  const int integerPart = std::trunc(num);
+  const double fractionPart = num - integerPart;
   printInteger(integerPart);
   std::cout << '.';
   printFraction(fractionPart, 4);

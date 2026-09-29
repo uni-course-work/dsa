@@ -6,7 +6,7 @@
 #include <iostream>
 #include <vector>
 
-void shiftByOne(std::vector<double> &arr, int j) {
+void static shiftByOne(std::vector<double> &arr, int j) {
   for (int i = arr.size() - 1; i > j; i--) {
     arr[i] = arr[i - 1];
   }
